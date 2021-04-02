@@ -38,7 +38,7 @@ with open(pyBank_csv, newline='', encoding='utf-8') as pyBank_file:
             max_num = change 
             max_dt = row[0]
 
-        if change > min_num:
+        if change < min_num:
             min_num = change 
             min_dt = row[0]
 
