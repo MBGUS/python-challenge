@@ -29,7 +29,7 @@ with open(pyPoll_csv, newline='', encoding='utf-8') as pyPoll_file:
 
         if candidate not in candidates_list:
             candidates_list.append(candidate)   # This append is to save a list of the candidates, the iteration loop finds them each by each line. Result = ['Khan', 'Correy', 'Li', "O'Tooley"]
-            votes[candidate] = 1                # Setting the first iteration with value 1, which is the first data found and then it saves in the dictionary. Result = {'Khan': 30, 'Correy': 13, 'Li': 3, "O'Tooley": 1}
+            votes[candidate] = 1                # Setting with value 1, which is the first input when the iteration found for first time the name of the candiate and then it saves in the dictionary. Result = {'Khan': 30, 'Correy': 13, 'Li': 3, "O'Tooley": 1}
                                                 # The value '1' corresponds to the votes of the second column of the dictionary.
         else:
             votes[candidate] += 1               # The iteration starts counting row by row after finding the firs value (if) and adding the value in the second column of the dictionary. Resutl = {'Khan': 1676, 'Correy': 534, 'Li': 369, "O'Tooley": 78} 
