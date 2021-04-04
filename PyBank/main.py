@@ -45,12 +45,22 @@ with open(pyBank_csv, newline='', encoding='utf-8') as pyBank_file:
     average = sum(change_list[1:])/len(change_list[1:])     # Average will sum all values/total ítems
                                                             # The function [1:] helps to initiate the calculation in the value that I declare before the :
 
-# Print the results
-print("\n")
-print("Financial Analysis")
-print("------------------")
-print(f'Total Month {total_month}')
-print(f'Total P&L ${total_pl}')
-print(f'Change ${round(average,2)}')
-print(f'Greatest Increase in Profits: {max_dt} (${max_num})')
-print(f'Greatest Decrease in Profits: {min_dt} (${min_num})')
+# Output results - remember ()
+output = (
+    f'\nFinancial Analysis\n'
+    f'------------------\n'
+    f'Total Month {total_month}\n'
+    f'Total P&L ${total_pl}\n'
+    f'Change ${round(average,2)}\n'
+    f'Greatest Increase in Profits: {max_dt} (${max_num})\n'
+    f'Greatest Decrease in Profits: {min_dt} (${min_num})\n'
+)
+
+# Print Output
+print(output)
+
+# Export the reuslts to a text file
+output_file = os.path.join('Analysis','analysis_pybank.txt')
+
+with open(output_file,'w') as txt_file:
+    txt_file.write(output)
