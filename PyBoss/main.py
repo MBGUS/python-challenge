@@ -95,3 +95,11 @@ with open(pyBoss_csv, newline='', encoding='utf-8') as pyBoss_file:
 # Generate a ZIP to save the new data adjusted
 data_adjusted = zip(emp_id, emp_first_name, emp_last_name, emp_dob, emp_ssn, emp_state)
 
+# Function to write a csv with the data adjusted
+output_file = os.path.join('Analysis','analysis_pyboss.csv')
+
+# Pathway to write a new file
+with open(output_file,'w',newline="") as data_file:
+    writer = csv.writer(data_file)
+    writer.writerow(['Emp ID', 'First Name', 'Last Name', 'DOB', 'SSN', 'State'])
+    writer.writerows(data_adjusted)
