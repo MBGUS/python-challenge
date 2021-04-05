@@ -84,8 +84,8 @@ with open(pyBoss_csv, newline='', encoding='utf-8') as pyBoss_file:
         emp_last_name += [name[1]]   # It takes from name list the column 1 (last name) and we save as new list. Result = ['Mathews', 'Moore', 'Douglas',...]
        
         ssn = row[3].split('-')      # It separates the SNN and save in a list. We use funciton split and '-' (hyphen).Result example = ['465', '80', '8629'] for each line
-        emp_ssn += [ssn[2]]          # It takes from snn list the column 2 (last 4 digits) and we save as new list. Result = ['9165', '7469', '6961',...]
-       
+        emp_ssn.append(f'***-**-{ssn[2]}')  # It takes from snn list the column 2 (last 4 digits) and we save as new list. Result = ['***-**-9165', '***-**-7469',...]
+
         date = row[2].split('-')    # It separates the date and save in a list. We use funciton split and '-' (hyphen).Result example = [['1991', '02', '24'] for each line
         emp_dob.append(f'{date[1]}/{date[2]}/{date[0]}') # It takes from date list the columns and readjust in the other MM/DD/YYYY and we save as new list. Result = ['02/24/1991', '11/19/1978', '01/08/1990',...]
 
